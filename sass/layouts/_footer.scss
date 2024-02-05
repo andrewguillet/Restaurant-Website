@@ -1,0 +1,99 @@
+@use "../base/theme";
+
+.l-main-footer {
+    background-color: theme.$dark-black;
+    &__container {
+        padding-block: 64px;
+    }
+    &__upper-content {
+        display: flex;
+        align-items: center;
+        margin-block-end: 48px;
+    }
+    &__logo,
+    &__social-networks {
+        inline-size: 100%;
+    }
+    &__logo {
+        font-size: theme.$fs-33;
+        font-family: theme.$heading-antic-didone;
+        color: theme.$white-main;
+        display: inline-block;
+    }
+    &__links-nav {
+        list-style: none;
+        display: flex;
+        flex-shrink: 0;
+
+    }
+    &__link {
+        color: theme.$white-main;
+        margin-inline: 16px;
+        position: relative;
+        padding-block-end: 6px;
+    }
+    &__social-networks {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__social-network-logo-container {
+        display: flex;
+    }
+    &__social-network-logo {
+        inline-size: theme.$fs-33;
+    }
+    &__copyright {
+        border-block-start: 1px solid rgba (theme.$white-main, 0.25);
+        padding-block-start: 32px;
+        color: theme.$white-main;
+        text-align: center;
+    }
+}
+
+.underline-link:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    left:0;
+    bottom: 0;
+    position: absolute;
+    background: theme.$white-main;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-out;
+    transform-origin: center;
+  }
+  
+  .underline-link:hover::after{
+    transform: scaleX(1);
+  }
+
+@media (max-width: 920px){
+    .l-main-footer {
+        &__container {
+            padding-block: 56px;
+        }
+        &__upper-content {
+            flex-direction: column;
+            margin-block-end: 32px;
+        }
+        &__logo {
+            margin-block-end: 40px;
+        }
+        &__logo,
+        &__social-networks {
+            inline-size: auto;
+        }
+        &__links-nav {
+            max-inline-size: 275px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-block-end: 44px;
+        }
+        &__link {
+            margin-inline: 4px;
+        }
+    }
+}
+

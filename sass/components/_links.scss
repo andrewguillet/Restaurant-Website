@@ -1,0 +1,12 @@
+@use "./mixins";
+@use "../base/theme";
+
+.c-gold-link {
+    @include mixins.button-aspect;
+    text-align: center;
+    display: inline-block;
+}
+
+.c-gold-link:hover{
+    background-color: theme.$orange-hover;
+}
